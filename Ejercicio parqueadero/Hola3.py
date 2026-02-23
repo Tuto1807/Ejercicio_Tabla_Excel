@@ -6,6 +6,7 @@ class Parqueadero:
         self.hora_entrada = ""
         self.hora_salida = ""
         self.estado = ""
+        self.textotabla = "
         
         
     def registrar_entrada(self):
@@ -20,7 +21,8 @@ class Parqueadero:
         print("Salida registrada correctamente.")
     
     def mostrar_info(self):
-        print("Fecha de entrada:", self.fecha_entrada)
-        print("Hora de entrada:", self.hora_entrada)
-        print("Hora de salida:", self.hora_salida)
-        print("Estado:", self.estado)
+        self.textotabla = self.textotabla + f"{'Cedula':<12} | {'Nombre':<12} | {'Rango':<10} | {'Marca':<10} | {'Placa':<12} | {'Color':<10} | {'Fecha Entrada':<12} | {'Hora Entrada':<10} | {'Hora Salida':<10} | {'Estado':<10} \n"
+        self.textotabla = self.textotabla + "-"*130 + "\n"
+        self.textotabla += f"{self.usuario.cedula:<12} | {self.usuario.nombre:<12} | {self.usuario.rango:<10} | {self.carro.placa:<10} | {self.carro.marca:<12} | {self.carro.color:<10} | {self.fecha_entrada:<12} | {self.hora_entrada:<10} | {self.hora_salida:<10} | {self.estado:<10}\n"
+
+        print(self.textotabla)
